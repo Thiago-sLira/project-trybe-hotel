@@ -9,8 +9,21 @@ public class TrybeHotelContext : DbContext, ITrybeHotelContext
     public DbSet<Hotel> Hotels { get; set; }
 
     public DbSet<Room> Rooms { get; set; }
-    
+
     public TrybeHotelContext(DbContextOptions<TrybeHotelContext> options) : base(options) { }
     public TrybeHotelContext() { }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(
+            @"
+            Server=localhost;
+            Database=TrybeHotel;
+            User=SA;
+            Password=TrybeHotel12!;
+            TrustServerCertificate=True
+            "
+        );
+    }
 
 }
