@@ -15,7 +15,8 @@ public class TrybeHotelContext : DbContext, ITrybeHotelContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(
+        optionsBuilder.UseSqlServer
+        (
             @"
             Server=localhost;
             Database=TrybeHotel;
