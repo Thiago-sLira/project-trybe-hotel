@@ -30,14 +30,14 @@ public class TrybeHotelContext : DbContext, ITrybeHotelContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Hotel>()
-        .HasOne(h => h.City);
-        // .WithMany(c => c.Hotels)
-        // .HasForeignKey(h => h.CityId);
+        .HasOne(h => h.City)
+        .WithMany(c => c.Hotels)
+        .HasForeignKey(h => h.CityId);
 
         modelBuilder.Entity<Room>()
-        .HasOne(r => r.Hotel);
-        // .WithMany(h => h.Rooms)
-        // .HasForeignKey(r => r.HotelId);
+        .HasOne(r => r.Hotel)
+        .WithMany(h => h.Rooms)
+        .HasForeignKey(r => r.HotelId);
     }
 
 }
