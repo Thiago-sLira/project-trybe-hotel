@@ -16,8 +16,8 @@ namespace TrybeHotel.Repository
         {
             return _context.Cities.Select(c => new CityDto
             {
-                CityId = c.CityId,
-                Name = c.Name,
+                cityId = c.CityId,
+                name = c.Name,
             });
         }
 
