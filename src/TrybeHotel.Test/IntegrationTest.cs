@@ -91,5 +91,5 @@ public class IntegrationTest: IClassFixture<WebApplicationFactory<Program>>
         var response = await _clientTest.GetAsync(url);
         Assert.Equal(System.Net.HttpStatusCode.OK, response?.StatusCode);
     }
-
+// Novo commit
 }
